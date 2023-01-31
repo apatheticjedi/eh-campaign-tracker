@@ -1,1 +1,1 @@
-# Eldritch Horror Campaign Tracker
+# Eldritch Campaign Tracker
