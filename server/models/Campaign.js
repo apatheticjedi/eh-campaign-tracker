@@ -3,10 +3,11 @@ const { Schema, model } = require('mongoose');
 // Schema for campaigns that includes comments
 const campaignSchema = new Schema(
     {
-        scenarios: {
-            type: String,
-            required: true
-        },
+        scenarios: [
+            {
+                type: String,
+            }
+        ],
         username: {
             type: String,
             required: true,
@@ -24,9 +25,11 @@ const campaignSchema = new Schema(
                 type: String
             }
         ],
-        investStatus: {
-            type: String,
-        },
+        investStatus: [
+            {
+                type: String,
+            }
+        ],
         cities: {
             type: String
         },

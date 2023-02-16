@@ -11,7 +11,7 @@ const typeDefs = gql`
     type Campaign {
         _id: ID
         createdAt: String
-        scenarios: String
+        scenarios: [String]
         status: String
         investigators: [String]
         investStatus: String
@@ -36,8 +36,8 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addCampaign(username: String!, createdAt: String, scenarios: String!, status: String!, investigators: [String], investStatus: String!, cities: String, notes: String): Campaign
-        editCampaign(_id: ID!, scenarios: String!, status: String!, investigators: [String], investStatus: String!, cities: String, notes: String): Campaign
+        addCampaign(username: String!, createdAt: String, scenarios: [String], status: String, investigators: [String], investStatus: [String], cities: String, notes: String): Campaign
+        editCampaign(_id: ID!, scenarios: [String], status: String, investigators: [String], investStatus: [String], cities: String, notes: String): Campaign
         deleteCampaign(_id: ID!): User
 
     }
