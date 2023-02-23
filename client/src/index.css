@@ -30,6 +30,33 @@ div.background-image h1 {
   margin-left: 1rem;
 }
 
+nav {
+  color: white;
+  font-family: 'Special Elite', cursive;
+  font-weight: bolder;
+  font-size: larger;
+  height: 2rem;
+  position: relative;
+  margin: auto;
+  padding: 13rem 1rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px black;
+}
+
+nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: darkgray;
+}
+
+
 html {
   background-color: burlywood;
   background-image: url(../src/assets/images/paper-gff9882dff_1920.jpg);
