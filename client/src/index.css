@@ -36,3 +36,16 @@ html {
   background-size: cover;
   height: 100%;
 }
+
+#main-footer {
+  height: 2rem;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer-div {
+  margin: auto;
+  padding: 1rem;
+  font-family: 'Special Elite', cursive;
+}

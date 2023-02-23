@@ -3,7 +3,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
-import Dashboard from '../src/pages/Dashboard';
+import Create from '../src/pages/Create';
 import Single from '../src/pages/Single';
 import Home from '../src/pages/Home';
 import Login from './pages/Login';
@@ -36,9 +36,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           {/* <Route path="/game/:id" element={<Single />} />
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} /> */}
+          <Route path="/create" element={<Create />} /> */}
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
 
 
