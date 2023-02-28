@@ -33,7 +33,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/game/:id" element={<Single />} />
+          <Route path="/campaign/:id" element={<Single />} />
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />

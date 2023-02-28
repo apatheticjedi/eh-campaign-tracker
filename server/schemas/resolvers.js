@@ -9,6 +9,7 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
+                    .populate('campaigns')
 
                 return userData;
             }
@@ -73,23 +74,47 @@ const resolvers = {
             }
             throw new AuthenticationError("You need to be logged in!");
         },
+        addInvestigator: async (parent, { campaignId, name, status, personalStory, darkPact, promisePower }, context) => {
+            if (context.user) {
+                const updatedCampaign = await Campaign.findOneAndUpdate(
+                    { _id: campaignId },
+                    { $push: { investigators: { name, status, personalStory, darkPact, promisePower } } },
+                    { new: true }
+                );
+
+                return updatedCampaign;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        addScenario: async (parent, { campaignId, scenario }, context) => {
+            if (context.user) {
+                const updatedScenarios = await Campaign.findByIdAndUpdate(
+                    { _id: campaignId },
+                    { $addToSet: { scenarios: scenario } },
+                    { new: true }
+                ).populate('scenarios');
+
+                return updatedScenarios;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        },
         // Deletes one campaign by the campaign's id
         deleteCampaign: async (parent, args, context) => {
-            if(context.user) {
+            if (context.user) {
                 const updateUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { campaigns: args._id }},
+                    { $pull: { campaigns: args._id } },
                     { new: true }
                 );
                 const removeCampaign = await Campaign.deleteOne(
-                    { _id: args._id}
+                    { _id: args._id }
                 )
                 return updateUser;
             }
             throw new AuthenticationError("You need to be logged in!");
         }
-    },
-
+    }
 };
 
 module.exports = resolvers;

@@ -66,6 +66,7 @@ const Login = (props) => {
                 <button className="btn" type="submit">
                   Submit
                 </button>
+                <p>or click here to sign up</p>
               </form>
               {error && <div>Sign up failed</div>}
             </div>

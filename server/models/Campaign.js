@@ -1,13 +1,9 @@
 const { Schema, model } = require('mongoose');
+const investigatorSchema = require('./Investigator');
 
 // Schema for campaigns that includes comments
 const campaignSchema = new Schema(
     {
-        scenarios: [
-            {
-                type: String,
-            }
-        ],
         username: {
             type: String,
             required: true,
@@ -20,16 +16,12 @@ const campaignSchema = new Schema(
         status: {
             type: String
         },
-        investigators: [
-            {
-                type: String
-            }
-        ],
-        investStatus: [
+        scenarios: [
             {
                 type: String,
             }
         ],
+        investigators: [investigatorSchema],
         cities: {
             type: String
         },
@@ -43,6 +35,10 @@ const campaignSchema = new Schema(
         }
     }
 );
+
+campaignSchema.virtual('scenarioCount').get(function() {
+    return this.scenarios.length;
+});
 
 const Campaign = model('Campaign', campaignSchema);
 
