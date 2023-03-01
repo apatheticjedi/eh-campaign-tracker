@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import auth from '../utils/auth';
+import SignUpModal from '../components/modals/signupModal';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -66,7 +67,7 @@ const Login = (props) => {
                 <button className="btn" type="submit">
                   Submit
                 </button>
-                <p>or click here to sign up</p>
+                <SignUpModal />
               </form>
               {error && <div>Sign up failed</div>}
             </div>

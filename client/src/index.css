@@ -65,6 +65,25 @@ input {
   font-family: 'Special Elite', cursive;
 }
 
+.modal {
+  background-image: url(../src/assets/images/map-of-the-world-g8a3aafacd_1920.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0px;
+  width: 75vw;
+  height: 50vh;
+  margin: auto;
+  display: contents;
+}
+
+.signup-font:hover {
+  cursor: pointer;
+}
+
+.btn-close {
+  display: none;
+}
+
 #main-footer {
   height: 2rem;
   bottom: 0;
