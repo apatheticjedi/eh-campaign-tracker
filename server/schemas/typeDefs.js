@@ -3,13 +3,14 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID
-        username: String!
-        email: String!
-        password: String!
+        username: String
+        email: String
         campaigns: [Campaign]
     }
+
     type Campaign {
         _id: ID
+        username: String
         createdAt: String
         status: String
         scenarios: [String]
@@ -21,7 +22,7 @@ const typeDefs = gql`
 
     type Investigator {
         _id: ID
-        name: String!
+        name: String
         status: String
         personalStory: String
         darkPact: Boolean
@@ -37,7 +38,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        campaigns: [Campaign]
+        campaigns(username: String): [Campaign]
         campaign(_id: ID!): Campaign
     }
     
@@ -47,7 +48,6 @@ const typeDefs = gql`
         addCampaign(username: String!, createdAt: String, scenarios: [String], status: String, investigators: [String], cities: [String], notes: String): Campaign
         addInvestigator(campaignId: ID!, name: String!, status: String, personalStory: String, darkPact: Boolean, promisePower: Boolean): Campaign
         addScenario(campaignId: ID!, scenario: String): Campaign
-        editCampaign(_id: ID!, scenarios: [String], status: String, investigators: [String], cities: [String], notes: String): Campaign
         deleteCampaign(_id: ID!): User
     }
 `;

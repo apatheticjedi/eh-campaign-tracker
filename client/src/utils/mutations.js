@@ -24,15 +24,14 @@ export const ADD_USER = gql`
     }`;
 
 export const ADD_CAMPAIGN = gql`
-    mutation addCampaign($status: String, $scenarios: String, $investigators: String, $investStatus: String, $cities: String, $notes: String)
+    mutation addCampaign($status: String, $scenarios: String, $investigators: String, $cities: String, $notes: String)
     {
-        addCampaign(status: $status, scenarios: $scenarios, investigators: $investigators, investStatus: $investStatus, cities: $cities, notes: $notes) {
+        addCampaign(status: $status, scenarios: $scenarios, investigators: $investigators, cities: $cities, notes: $notes) {
             _id
             createdAt
             status
             scenarios
             investigators
-            investStatus
             cities
             notes
         }

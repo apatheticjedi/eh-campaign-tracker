@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 
 const Home = () => {
     const { loading, data } = useQuery(QUERY_CAMPAIGNS);
-    const { data: userData } = useQuery(QUERY_ME);
+    // const { data: userData } = useQuery(QUERY_ME);
     const campaigns = data?.campaigns || [];
     const loggedIn = Auth.loggedIn();
 

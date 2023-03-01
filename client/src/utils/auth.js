@@ -25,7 +25,6 @@ class AuthService {
             }
         } catch (err) {
             return false;
-            
         }
     }
     // retrieve token from localStorage
@@ -47,8 +46,9 @@ class AuthService {
         // Clear user token and profile data from localStorage
         localStorage.removeItem('id_token');
         // this will reload the page and reset the state of the application
-        window.location.assign('/');
+        window.location.assign('/login');
     }
 }
 
+// eslint-disable-next-line
 export default new AuthService();

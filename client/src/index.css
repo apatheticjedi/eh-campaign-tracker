@@ -69,15 +69,67 @@ input {
   background-image: url(../src/assets/images/map-of-the-world-g8a3aafacd_1920.png);
   background-size: contain;
   background-repeat: no-repeat;
-  border: 0px;
-  width: 75vw;
-  height: 50vh;
+  border: 0px white;
+  width: 25rem;
+  height: 20rem;
+  text-align: center;
   margin: auto;
-  display: contents;
+}
+
+div.modal-content {
+  width: 65%;
+  margin: auto;
+  top: 2rem;
+  position: relative;
+  font-weight: bold;
+}
+
+h5.modal-title  {
+  font-weight: bolder;
+  font-size: x-large;
+  margin: 0 2rem;
+  /* background-color: rgba(255, 255, 255, 0.3); */
+}
+
+.modal-body form {
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  padding: 0 1rem;
+  /* border-radius: 5px; */
+  width: 80%;
+  margin: auto;
+  position: relative;
 }
 
 .signup-font:hover {
   cursor: pointer;
+}
+
+.card {
+  text-align: center;
+}
+
+input {
+  background-color: antiquewhite;
+  border-bottom: 2px solid goldenrod;
+  border-right: 2px solid goldenrod;
+  border-top: 2px solid #281001;
+  border-left: 2px solid #281001;
+  padding: .2rem 0;
+}
+
+.btn {
+  color: goldenrod;
+  background-color: #281001;
+  font-family: 'Special Elite', cursive;
+  border-radius: 5px;
+  padding: .3rem 1rem;
+  margin: 1rem 0;
+  border: 2px solid goldenrod;
+  box-shadow: 2px 1px gray;
+}
+
+.btn:active {
+  box-shadow: none;
 }
 
 .btn-close {

@@ -58,7 +58,7 @@ function SignUpModal(args) {
         });
         const loggedIn = Auth.loggedIn();
         if (loggedIn) {
-            <Navigate to="/dashboard" />
+            <Navigate to="/" />
         };
 
     };
@@ -70,7 +70,7 @@ function SignUpModal(args) {
                 <span className='signup-font'>Click here to sign up</span>
             </NavLink>
             <Modal isOpen={modal} toggle={toggle} {...args}>
-                <ModalHeader className="font" toggle={toggle}><h2>Sign Up!</h2></ModalHeader>
+                <ModalHeader className="font" toggle={toggle}>Sign Up!</ModalHeader>
                 <ModalBody className="signup-modal-body">
                     <Form onSubmit={handleFormSubmit}>
                         <Row className="row-cols-lg-auto g-3 align-items-center">
